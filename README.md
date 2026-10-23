@@ -2,9 +2,21 @@
 
 An **independent portfolio concept** for an international recruiting brand. It contains an original logo mark and a consistent 1600 × 900 partnership card for each unique country in a sample brief. The Toptal logo shown in the supplied reference is not used.
 
-![Japan partnership card](japan.png)
+## Selected direction: Editorial / Orbit
 
-[View the overview of all 48 cards](contact-sheet.jpg) · [Download the complete SVG and PNG series](free-recruiters-design-concept.zip)
+The first Japan design was selected. The complete series now uses the same cream background, serif country title, red accent, and Orbit logo for all **48 unique countries** in the supplied list.
+
+![Selected Japan partnership card](editorial-series/png/japan.png)
+
+[Download the complete selected series](free-recruiters-editorial-48-countries.zip) · [View all 48 cards](editorial-series/contact-sheet.jpg) · [Country manifest](editorial-series/countries.json)
+
+The ZIP contains 48 PNG images at 1600 × 900, 48 editable SVGs, three overview pages, a complete contact sheet, and flag attribution. Long country names fit within the same layout. Vietnam is included once; two additional country names are needed if 50 different countries are required.
+
+Regenerate this selected series with `python editorial_series.py` after installing the Python requirements. Its flag artwork is included in `assets/flags/`; no network requests are needed when generating or opening the cards. Use Georgia and Arial for the intended typography; `EDITORIAL_FONT` can point to a local serif TTF for title measurements.
+
+## Earlier concepts
+
+[View the original concept overview](contact-sheet.jpg) · [Download the earlier concept series](free-recruiters-design-concept.zip)
 
 ## Ten directions for Japan
 

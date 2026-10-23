@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900"
+      viewBox="0 0 1600 900" role="img"
+      aria-label="Bosnia and Herzegovina in partnership with Free Recruiters — Editorial">
+      <defs>
+        <filter id="shadow"><feDropShadow dx="0" dy="14" stdDeviation="20"
+          flood-color="#081F29" flood-opacity=".18"/></filter>
+        <linearGradient id="sky" x2="1" y2="1"><stop stop-color="#d9f2f0"/>
+          <stop offset="1" stop-color="#eef4ff"/></linearGradient>
+      </defs>
+      <rect width="1600" height="900" fill="#F5F2EA"/>
+      
+      <rect x="74" y="66" width="1452" height="744" fill="#FFFEFA"/>
+      <rect x="74" y="66" width="12" height="744" fill="#BC002D"/>
+      <text x="132" y="145" text-anchor="start" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="4" fill="#123E4A">INTERNATIONAL PARTNERSHIP</text>
+      <text x="132" y="234" text-anchor="start" font-family="Georgia,serif" font-size="108" font-weight="400" letter-spacing="0" fill="#123E4A">Bosnia and</text><text x="132" y="350" text-anchor="start" font-family="Georgia,serif" font-size="108" font-weight="400" letter-spacing="0" fill="#123E4A">Herzegovina</text>
+      <path d="M137 390H735" stroke="#BC002D" stroke-width="5"/>
+      <text x="132" y="467" text-anchor="start" font-family="Arial, sans-serif" font-size="35" font-weight="400" letter-spacing="0" fill="#5D7778">In partnership with</text>
+      <text x="132" y="530" text-anchor="start" font-family="Arial, sans-serif" font-size="58" font-weight="700" letter-spacing="0" fill="#123E4A">Free Recruiters</text>
+      <g transform="translate(132 659) scale(0.666667)"><circle cx="54" cy="54" r="43" fill="none" stroke="#123E4A" stroke-width="4"/>
+            <circle cx="54" cy="54" r="19" fill="#BC002D"/>
+            <circle cx="54" cy="11" r="7" fill="#BC002D"/>
+            <circle cx="91" cy="75" r="7" fill="#123E4A"/>
+            <circle cx="17" cy="75" r="7" fill="#123E4A"/></g><g font-family="Arial, sans-serif" font-weight="800" fill="#123E4A">
+      <text x="223.52" y="688.92" font-size="28.16" letter-spacing="1.6">FREE</text>
+      <text x="223.52" y="723.24" font-size="28.16" letter-spacing="1.6">RECRUITERS</text>
+    </g>
+      <rect x="875" y="151" width="560" height="520" rx="16" fill="#F3F5F1"/>
+      <g filter="url(#shadow)"><rect x="902" y="220" width="510" height="340" fill="#fff" stroke="#dfe6e4" stroke-width="2"/><ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" id="flag-icons-ba" viewBox="0 0 640 480" x="902" y="220" width="510" height="340" preserveAspectRatio="xMidYMid meet">
+  <ns0:defs>
+    <ns0:clipPath id="ba-a">
+      <ns0:path fill-opacity=".7" d="M-85.3 0h682.6v512H-85.3z" />
+    </ns0:clipPath>
+  </ns0:defs>
+  <ns0:g fill-rule="evenodd" clip-path="url(#ba-a)" transform="translate(80)scale(.9375)">
+    <ns0:path fill="#009" d="M-85.3 0h682.6v512H-85.3z" />
+    <ns0:path fill="#FC0" d="m56.5 0 511 512.3V.3z" />
+    <ns0:path fill="#FFF" d="M439.9 481.5 412 461.2l-28.6 20.2 10.8-33.2-28.2-20.5h35l10.8-33.2 10.7 33.3h35l-28 20.7zm81.3 10.4-35-.1-10.7-33.3-10.8 33.2h-35l28.2 20.5-10.8 33.2 28.6-20.2 28 20.3-10.5-33zM365.6 384.7l28-20.7-35-.1-10.7-33.2-10.8 33.2-35-.1 28.2 20.5-10.8 33.3 28.6-20.3 28 20.4zm-64.3-64.5 28-20.6-35-.1-10.7-33.3-10.9 33.2h-34.9l28.2 20.5-10.8 33.2 28.6-20.2 27.9 20.3zm-63.7-63.6 28-20.7h-35L220 202.5l-10.8 33.2h-35l28.2 20.4-10.8 33.3 28.6-20.3 28 20.4-10.5-33zm-64.4-64.3 28-20.6-35-.1-10.7-33.3-10.9 33.2h-34.9L138 192l-10.8 33.2 28.6-20.2 27.9 20.3-10.4-33zm-63.6-63.9 27.9-20.7h-35L91.9 74.3 81 107.6H46L74.4 128l-10.9 33.2L92.1 141l27.8 20.4zm-64-64 27.9-20.7h-35L27.9 10.3 17 43.6h-35L10.4 64l-11 33.3L28.1 77l27.8 20.4zm-64-64L9.4-20.3h-35l-10.7-33.3L-47-20.4h-35L-53.7 0l-10.8 33.2L-35.9 13l27.8 20.4z" />
+  </ns0:g>
+</ns0:svg></g>
+      <text x="903" y="713" text-anchor="start" font-family="Arial, sans-serif" font-size="21" font-weight="700" letter-spacing="3" fill="#658280">01 — EDITORIAL</text>
+    
+      <text x="80" y="868" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="2" fill="#82908F">COUNTRY SERIES  /  BOSNIA AND HERZEGOVINA  /  46 OF 48</text>
+    </svg>

@@ -1,0 +1,290 @@
+[
+  {
+    "country": "Colombia",
+    "code": "co",
+    "png": "png/colombia.png",
+    "svg": "svg/colombia.svg"
+  },
+  {
+    "country": "Chile",
+    "code": "cl",
+    "png": "png/chile.png",
+    "svg": "svg/chile.svg"
+  },
+  {
+    "country": "Paraguay",
+    "code": "py",
+    "png": "png/paraguay.png",
+    "svg": "svg/paraguay.svg"
+  },
+  {
+    "country": "Argentina",
+    "code": "ar",
+    "png": "png/argentina.png",
+    "svg": "svg/argentina.svg"
+  },
+  {
+    "country": "Brazil",
+    "code": "br",
+    "png": "png/brazil.png",
+    "svg": "svg/brazil.svg"
+  },
+  {
+    "country": "Uruguay",
+    "code": "uy",
+    "png": "png/uruguay.png",
+    "svg": "svg/uruguay.svg"
+  },
+  {
+    "country": "Bolivia",
+    "code": "bo",
+    "png": "png/bolivia.png",
+    "svg": "svg/bolivia.svg"
+  },
+  {
+    "country": "Venezuela",
+    "code": "ve",
+    "png": "png/venezuela.png",
+    "svg": "svg/venezuela.svg"
+  },
+  {
+    "country": "Ecuador",
+    "code": "ec",
+    "png": "png/ecuador.png",
+    "svg": "svg/ecuador.svg"
+  },
+  {
+    "country": "Peru",
+    "code": "pe",
+    "png": "png/peru.png",
+    "svg": "svg/peru.svg"
+  },
+  {
+    "country": "Nigeria",
+    "code": "ng",
+    "png": "png/nigeria.png",
+    "svg": "svg/nigeria.svg"
+  },
+  {
+    "country": "South Africa",
+    "code": "za",
+    "png": "png/south-africa.png",
+    "svg": "svg/south-africa.svg"
+  },
+  {
+    "country": "Rwanda",
+    "code": "rw",
+    "png": "png/rwanda.png",
+    "svg": "svg/rwanda.svg"
+  },
+  {
+    "country": "Liberia",
+    "code": "lr",
+    "png": "png/liberia.png",
+    "svg": "svg/liberia.svg"
+  },
+  {
+    "country": "Ghana",
+    "code": "gh",
+    "png": "png/ghana.png",
+    "svg": "svg/ghana.svg"
+  },
+  {
+    "country": "Burkina Faso",
+    "code": "bf",
+    "png": "png/burkina-faso.png",
+    "svg": "svg/burkina-faso.svg"
+  },
+  {
+    "country": "Algeria",
+    "code": "dz",
+    "png": "png/algeria.png",
+    "svg": "svg/algeria.svg"
+  },
+  {
+    "country": "Angola",
+    "code": "ao",
+    "png": "png/angola.png",
+    "svg": "svg/angola.svg"
+  },
+  {
+    "country": "Morocco",
+    "code": "ma",
+    "png": "png/morocco.png",
+    "svg": "svg/morocco.svg"
+  },
+  {
+    "country": "Egypt",
+    "code": "eg",
+    "png": "png/egypt.png",
+    "svg": "svg/egypt.svg"
+  },
+  {
+    "country": "China",
+    "code": "cn",
+    "png": "png/china.png",
+    "svg": "svg/china.svg"
+  },
+  {
+    "country": "Nepal",
+    "code": "np",
+    "png": "png/nepal.png",
+    "svg": "svg/nepal.svg"
+  },
+  {
+    "country": "Malaysia",
+    "code": "my",
+    "png": "png/malaysia.png",
+    "svg": "svg/malaysia.svg"
+  },
+  {
+    "country": "Thailand",
+    "code": "th",
+    "png": "png/thailand.png",
+    "svg": "svg/thailand.svg"
+  },
+  {
+    "country": "India",
+    "code": "in",
+    "png": "png/india.png",
+    "svg": "svg/india.svg"
+  },
+  {
+    "country": "Indonesia",
+    "code": "id",
+    "png": "png/indonesia.png",
+    "svg": "svg/indonesia.svg"
+  },
+  {
+    "country": "Japan",
+    "code": "jp",
+    "png": "png/japan.png",
+    "svg": "svg/japan.svg"
+  },
+  {
+    "country": "South Korea",
+    "code": "kr",
+    "png": "png/south-korea.png",
+    "svg": "svg/south-korea.svg"
+  },
+  {
+    "country": "Vietnam",
+    "code": "vn",
+    "png": "png/vietnam.png",
+    "svg": "svg/vietnam.svg"
+  },
+  {
+    "country": "Pakistan",
+    "code": "pk",
+    "png": "png/pakistan.png",
+    "svg": "svg/pakistan.svg"
+  },
+  {
+    "country": "Philippines",
+    "code": "ph",
+    "png": "png/philippines.png",
+    "svg": "svg/philippines.svg"
+  },
+  {
+    "country": "Finland",
+    "code": "fi",
+    "png": "png/finland.png",
+    "svg": "svg/finland.svg"
+  },
+  {
+    "country": "Germany",
+    "code": "de",
+    "png": "png/germany.png",
+    "svg": "svg/germany.svg"
+  },
+  {
+    "country": "Austria",
+    "code": "at",
+    "png": "png/austria.png",
+    "svg": "svg/austria.svg"
+  },
+  {
+    "country": "Hungary",
+    "code": "hu",
+    "png": "png/hungary.png",
+    "svg": "svg/hungary.svg"
+  },
+  {
+    "country": "France",
+    "code": "fr",
+    "png": "png/france.png",
+    "svg": "svg/france.svg"
+  },
+  {
+    "country": "Italy",
+    "code": "it",
+    "png": "png/italy.png",
+    "svg": "svg/italy.svg"
+  },
+  {
+    "country": "Denmark",
+    "code": "dk",
+    "png": "png/denmark.png",
+    "svg": "svg/denmark.svg"
+  },
+  {
+    "country": "Netherlands",
+    "code": "nl",
+    "png": "png/netherlands.png",
+    "svg": "svg/netherlands.svg"
+  },
+  {
+    "country": "Greece",
+    "code": "gr",
+    "png": "png/greece.png",
+    "svg": "svg/greece.svg"
+  },
+  {
+    "country": "Poland",
+    "code": "pl",
+    "png": "png/poland.png",
+    "svg": "svg/poland.svg"
+  },
+  {
+    "country": "San Marino",
+    "code": "sm",
+    "png": "png/san-marino.png",
+    "svg": "svg/san-marino.svg"
+  },
+  {
+    "country": "Liechtenstein",
+    "code": "li",
+    "png": "png/liechtenstein.png",
+    "svg": "svg/liechtenstein.svg"
+  },
+  {
+    "country": "Moldova",
+    "code": "md",
+    "png": "png/moldova.png",
+    "svg": "svg/moldova.svg"
+  },
+  {
+    "country": "North Macedonia",
+    "code": "mk",
+    "png": "png/north-macedonia.png",
+    "svg": "svg/north-macedonia.svg"
+  },
+  {
+    "country": "Bosnia and Herzegovina",
+    "code": "ba",
+    "png": "png/bosnia-and-herzegovina.png",
+    "svg": "svg/bosnia-and-herzegovina.svg"
+  },
+  {
+    "country": "Kiribati",
+    "code": "ki",
+    "png": "png/kiribati.png",
+    "svg": "svg/kiribati.svg"
+  },
+  {
+    "country": "Guyana",
+    "code": "gy",
+    "png": "png/guyana.png",
+    "svg": "svg/guyana.svg"
+  }
+]
