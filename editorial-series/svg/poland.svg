@@ -8,11 +8,11 @@
           <stop offset="1" stop-color="#eef4ff"/></linearGradient>
       </defs>
       <rect width="1600" height="900" fill="#F5F2EA"/>
-      
+
       <rect x="74" y="66" width="1452" height="744" fill="#FFFEFA"/>
       <rect x="74" y="66" width="12" height="744" fill="#BC002D"/>
       <text x="132" y="145" text-anchor="start" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="4" fill="#123E4A">INTERNATIONAL PARTNERSHIP</text>
-      <text x="132" y="350" text-anchor="start" font-family="Georgia,serif" font-size="165" font-weight="400" letter-spacing="0" fill="#123E4A">Poland</text>
+      <text x="132" y="338" text-anchor="start" font-family="Georgia,serif" font-size="165" font-weight="400" letter-spacing="0" fill="#123E4A">Poland</text>
       <path d="M137 390H735" stroke="#BC002D" stroke-width="5"/>
       <text x="132" y="467" text-anchor="start" font-family="Arial, sans-serif" font-size="35" font-weight="400" letter-spacing="0" fill="#5D7778">In partnership with</text>
       <text x="132" y="530" text-anchor="start" font-family="Arial, sans-serif" font-size="58" font-weight="700" letter-spacing="0" fill="#123E4A">Free Recruiters</text>
@@ -31,7 +31,7 @@
     <ns0:path fill="#dc143c" d="M0 240h640v240H0z" />
   </ns0:g>
 </ns0:svg></g>
-      <text x="903" y="713" text-anchor="start" font-family="Arial, sans-serif" font-size="21" font-weight="700" letter-spacing="3" fill="#658280">01 — EDITORIAL</text>
-    
-      <text x="80" y="868" text-anchor="start" font-family="Arial, sans-serif" font-size="16" font-weight="700" letter-spacing="2" fill="#82908F">COUNTRY SERIES  /  POLAND  /  41 OF 48</text>
+
+
+
     </svg>

@@ -50,8 +50,11 @@ def title(name: str) -> str:
         size = 110
         while max(serif(size).getlength(t) for t in lines) > max_width:
             size -= 1
-    y = 350 - (len(lines) - 1) * (size + 8)
-    return "".join(design.line(132, y + i * (size + 8), html.escape(text),
+    # Give descenders more space above the red rule. On two-line titles keep
+    # the first line clear of the small heading while lifting the lower line.
+    step = size
+    y = 338 if len(lines) == 1 else 342 - (len(lines) - 1) * step
+    return "".join(design.line(132, y + i * step, html.escape(text),
                               size, design.NAVY, family="Georgia,serif")
                    for i, text in enumerate(lines))
 
@@ -74,8 +77,11 @@ def card(name: str, code: str, index: int) -> str:
     svg = svg.replace(design.flag(902, 220, 510, 340), flag(code))
     svg = svg.replace('Japan in partnership with Free Recruiters — Editorial',
                       html.escape(name) + ' in partnership with Free Recruiters — Editorial')
-    return svg.replace('DESIGN CONCEPT  /  JAPAN  /  01 OF 10',
-                       f'COUNTRY SERIES  /  {html.escape(name.upper())}  /  {index:02d} OF 48')
+    svg = svg.replace(design.line(903, 713, '01 — EDITORIAL', 21, '#658280',
+                                  weight=700, spacing=3), '')
+    svg = svg.replace(design.line(80, 868, 'DESIGN CONCEPT  /  JAPAN  /  01 OF 10',
+                                  16, '#82908F', weight=700, spacing=2), '')
+    return '\n'.join(line.rstrip() for line in svg.splitlines())
 
 
 def main() -> None:
