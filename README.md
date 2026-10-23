@@ -8,7 +8,9 @@ An **independent portfolio concept** for an international recruiting brand. It c
 
 ## Ten directions for Japan
 
-The [comparison sheet](japan-10-variants.jpg) shows ten genuinely different layouts. Each uses the same original brand mark and an accurately proportioned Japanese flag. [Download all ten as SVG and PNG](japan-10-variants.zip).
+The [comparison sheet](japan-10-variants.jpg) shows ten different layouts. Each now has its own original, code-drawn mark matched to its visual style; compare the marks on the [icon sheet](japan-10-icons.jpg). All cards use an accurately proportioned Japanese flag. [Download all ten as SVG and PNG](japan-10-variants.zip).
+
+[Download the review package](japan-design-concepts-for-review.zip) for all ten PNG previews, editable SVG files, both comparison sheets, and a short guide. These are initial concepts for feedback; the layouts, icons, colors, and fonts can be refined before producing the remaining country cards.
 
 |  |  |  |  |
 |---|---|---|---|

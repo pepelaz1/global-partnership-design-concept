@@ -2,15 +2,13 @@
 
 from __future__ import annotations
 
+from io import BytesIO
 from pathlib import Path
 from shutil import copyfile
 from zipfile import ZIP_DEFLATED, ZipFile
 
 import cairosvg
 from PIL import Image, ImageDraw, ImageFont
-
-from generate import icon
-
 
 ROOT = Path(__file__).resolve().parent
 DEST = ROOT / "japan-variants"
@@ -31,9 +29,59 @@ def flag(x: int, y: int, w: int, h: int, *, border: str = "#dfe6e4") -> str:
     </g>'''
 
 
-def lockup(x: int, y: int, *, scale: float = 1, color: str = NAVY,
+ICON_NAMES = [
+    "Orbit", "Constellation", "Bridge", "FR monogram", "Rising path",
+    "Forward", "Overlap", "Ribbon link", "Swiss grid", "Heritage seal",
+]
+
+
+def icon(x: int, y: int, size: int, variant: int) -> str:
+    """Ten original, code-drawn marks tailored to the corresponding layouts."""
+    marks = {
+        1: '''<circle cx="54" cy="54" r="43" fill="none" stroke="#123E4A" stroke-width="4"/>
+            <circle cx="54" cy="54" r="19" fill="#BC002D"/>
+            <circle cx="54" cy="11" r="7" fill="#BC002D"/>
+            <circle cx="91" cy="75" r="7" fill="#123E4A"/>
+            <circle cx="17" cy="75" r="7" fill="#123E4A"/>''',
+        2: '''<path d="M18 73 43 25 78 39 92 79 52 88Z" fill="none" stroke="#8EE0D4" stroke-width="3"/>
+            <circle cx="18" cy="73" r="7" fill="#F0B8A5"/><circle cx="43" cy="25" r="8" fill="#8EE0D4"/>
+            <circle cx="78" cy="39" r="7" fill="#F0B8A5"/><circle cx="92" cy="79" r="8" fill="#8EE0D4"/>
+            <circle cx="52" cy="88" r="6" fill="#fff"/><circle cx="54" cy="55" r="4" fill="#fff"/>''',
+        3: '''<rect x="4" y="4" width="100" height="100" rx="20" fill="#123E4A"/>
+            <path d="M18 76h20V48h30v28h22" fill="none" stroke="#fff" stroke-width="9" stroke-linejoin="round"/>
+            <path d="M20 34c20-16 48-16 68 0" fill="none" stroke="#72D5C1" stroke-width="7" stroke-linecap="round"/>
+            <circle cx="20" cy="34" r="6" fill="#F4C783"/><circle cx="88" cy="34" r="6" fill="#F4C783"/>''',
+        4: '''<circle cx="54" cy="54" r="47" fill="none" stroke="#151C1D" stroke-width="2"/>
+            <circle cx="54" cy="54" r="39" fill="none" stroke="#151C1D" stroke-width="1"/>
+            <text x="54" y="72" text-anchor="middle" font-family="Georgia,serif" font-size="46" letter-spacing="-6" fill="#151C1D">FR</text>''',
+        5: '''<circle cx="54" cy="43" r="31" fill="#BC002D"/>
+            <path d="M8 82q20-25 46 0t46 0" fill="none" stroke="#123E4A" stroke-width="9" stroke-linecap="round"/>
+            <path d="M17 98q22-23 39 0t35 0" fill="none" stroke="#2D7778" stroke-width="5" stroke-linecap="round"/>''',
+        6: '''<path d="M12 24h47l36 30-36 30H12l36-30Z" fill="#82DACF"/>
+            <path d="M20 54h74" stroke="#0A3347" stroke-width="8" stroke-linecap="round"/>
+            <circle cx="28" cy="54" r="11" fill="#fff"/><circle cx="81" cy="54" r="11" fill="#fff"/>''',
+        7: '''<circle cx="43" cy="54" r="34" fill="#A5D5DE" fill-opacity=".8" stroke="#347D8A" stroke-width="2"/>
+            <circle cx="67" cy="54" r="34" fill="#C5E5D9" fill-opacity=".75" stroke="#347D8A" stroke-width="2"/>
+            <path d="M55 26c10 6 17 16 17 28S65 76 55 82C45 76 38 66 38 54s7-22 17-28Z" fill="#BC002D"/>''',
+        8: '''<path d="M12 23h57L51 54l18 31H12l18-31Z" fill="#BC002D"/>
+            <path d="M96 23H39l18 31-18 31h57L78 54Z" fill="#E2AAB4"/>
+            <path d="M43 54h22" stroke="#fff" stroke-width="7" stroke-linecap="round"/>''',
+        9: '''<rect x="6" y="6" width="44" height="44" fill="#BC002D"/>
+            <rect x="58" y="6" width="44" height="44" fill="#123E4A"/>
+            <rect x="6" y="58" width="44" height="44" fill="#123E4A"/>
+            <rect x="58" y="58" width="44" height="44" fill="#BC002D"/>
+            <path d="M15 39h26M28 16v26M68 27h24M68 79h24M79 68v24" stroke="#fff" stroke-width="5"/>''',
+        10: '''<circle cx="54" cy="54" r="45" fill="none" stroke="#A89367" stroke-width="3"/>
+            <circle cx="54" cy="54" r="36" fill="none" stroke="#D8C9A8" stroke-width="2"/>
+            <path d="M31 68V36h15q13 0 13 11T46 58H31M60 36h21M62 51h16M62 68V36" fill="none" stroke="#123E4A" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="54" cy="12" r="3" fill="#A89367"/><circle cx="54" cy="96" r="3" fill="#A89367"/>''',
+    }
+    return f'<g transform="translate({x} {y}) scale({size / 108:g})">{marks[variant]}</g>'
+
+
+def lockup(x: int, y: int, variant: int, *, scale: float = 1, color: str = NAVY,
            marker: bool = True) -> str:
-    mark = icon(x, y, int(82 * scale)) if marker else ""
+    mark = icon(x, y, int(82 * scale), variant) if marker else ""
     tx = x + (104 if marker else 0) * scale
     return f'''{mark}<g font-family="Arial, sans-serif" font-weight="800" fill="{color}">
       <text x="{tx:g}" y="{y+34*scale:g}" font-size="{32*scale:g}" letter-spacing="1.6">FREE</text>
@@ -76,7 +124,7 @@ def concept_01() -> str:
       <path d="M137 390H735" stroke="{RED}" stroke-width="5"/>
       {line(132,467,'In partnership with',35,'#5D7778')}
       {line(132,530,'Free Recruiters',58,NAVY,weight=700)}
-      {lockup(132,659,scale=.88)}
+      {lockup(132,659,1,scale=.88)}
       <rect x="875" y="151" width="560" height="520" rx="16" fill="#F3F5F1"/>
       <g filter="url(#shadow)">{flag(902,220,510,340)}</g>
       {line(903,713,'01 — EDITORIAL',21,'#658280',weight=700,spacing=3)}
@@ -95,7 +143,7 @@ def concept_02() -> str:
       <rect x="811" y="375" width="110" height="6" fill="#EAAE95"/>
       {line(811,448,'IN PARTNERSHIP WITH',26,'#9FDAD3',weight=700,spacing=2)}
       {line(811,518,'FREE RECRUITERS',48,'#FFFFFF',weight=700)}
-      {lockup(811,635,scale=.85,color='#FFFFFF')}
+      {lockup(811,635,2,scale=.85,color='#FFFFFF')}
     '''
     return wrap(body, 2, "Midnight", "#0B2230")
 
@@ -108,7 +156,7 @@ def concept_03() -> str:
       <g filter="url(#shadow)">{flag(80,190,465,310,border='#ffffff')}</g>
       {line(73,665,'JAPAN',105,'#FFFFFF',weight=800,spacing=6)}
       {line(80,718,'PARTNERSHIP CONCEPT',24,'#FFE4E6',weight=700,spacing=2)}
-      {lockup(783,176,scale=1.1)}
+      {lockup(783,176,3,scale=1.1)}
       <rect x="785" y="376" width="650" height="2" fill="#D3DCDA"/>
       {line(785,488,'In partnership',66,NAVY,family='Georgia,serif')}
       {line(785,568,'with Free Recruiters',52,NAVY,family='Georgia,serif')}
@@ -126,7 +174,7 @@ def concept_04() -> str:
       <path d="M320 320H1280" stroke="#DADADA" stroke-width="2"/>
       {flag(590,369,420,280)}
       {line(800,734,'JAPAN IN PARTNERSHIP WITH FREE RECRUITERS',29,'#151C1D',weight=700,anchor='middle',spacing=2)}
-      {icon(782, 754, 36)}
+      {icon(773, 738, 54, 4)}
     '''
     return wrap(body, 4, "Museum", "#FDFDFB")
 
@@ -142,7 +190,7 @@ def concept_05() -> str:
       {line(350,415,'Japan',113,NAVY,family='Georgia,serif')}
       {line(353,479,'IN PARTNERSHIP WITH',25,NAVY,weight=700,spacing=3)}
       {line(353,537,'FREE RECRUITERS',48,NAVY,weight=800)}
-      {lockup(353,696,scale=.72,color='#FFFFFF')}
+      {lockup(353,696,5,scale=.72,color='#FFFFFF')}
       {line(1248,760,'05',42,'#F2D8C4',anchor='end',weight=700)}
     '''
     return wrap(body, 5, "Travel poster", "#E9D5C0")
@@ -157,7 +205,7 @@ def concept_06() -> str:
       {line(80,341,'JAPAN',116,'#FFFFFF',weight=800,spacing=3)}
       {line(88,416,'IN PARTNERSHIP WITH',26,'#92D9CD',weight=700,spacing=2)}
       {line(88,480,'FREE RECRUITERS',46,'#FFFFFF',weight=700)}
-      {lockup(89,641,scale=.82,color='#FFFFFF')}
+      {lockup(89,641,6,scale=.82,color='#FFFFFF')}
       <rect x="897" y="183" width="606" height="459" rx="28" fill="#fff" filter="url(#shadow)"/>
       {flag(926,211,546,364,border='#fff')}
       {line(1199,615,'JAPAN  /  JP',19,NAVY,weight=700,anchor='middle',spacing=4)}
@@ -174,7 +222,7 @@ def concept_07() -> str:
       <rect x="169" y="175" width="615" height="533" rx="29" fill="#EAF2F2"/>
       {flag(206,244,540,360,border='#fff')}
       {line(206,671,'COUNTRY SPOTLIGHT',18,'#6297A1',weight=700,spacing=4)}
-      {lockup(854,190,scale=.92)}
+      {lockup(854,190,7,scale=.92)}
       {line(850,422,'Japan',99,NAVY,family='Georgia,serif')}
       <rect x="855" y="458" width="92" height="8" rx="4" fill="{RED}"/>
       {line(855,535,'In partnership with',32,'#517D84')}
@@ -185,7 +233,7 @@ def concept_07() -> str:
 
 def concept_08() -> str:
     body = f'''
-      {lockup(95,78,scale=.9)}
+      {lockup(95,78,8,scale=.9)}
       {line(1508,134,'GLOBAL PARTNERSHIPS',20,'#456D72',weight=700,anchor='end',spacing=3)}
       <path d="M0 243H1600V515H0Z" fill="{RED}"/>
       <path d="M1340 243l-92 136 92 136" fill="#8F0729"/>
@@ -202,7 +250,7 @@ def concept_08() -> str:
 def concept_09() -> str:
     body = f'''
       <path d="M800 0V900 M0 451H1600" stroke="#E4E8E6" stroke-width="3"/>
-      {icon(77, 77, 55)}
+      {icon(77, 77, 55, 9)}
       {line(150,116,'FREE RECRUITERS',21,NAVY,weight=800,spacing=1)}
       {line(742,132,'09 / 10',17,'#829497',weight=700,anchor='end',spacing=3)}
       {line(66,402,'JP',290,RED,weight=800,spacing=-12)}
@@ -228,7 +276,7 @@ def concept_10() -> str:
       {line(800,611,'IN PARTNERSHIP WITH',25,'#8A7960',weight=700,anchor='middle',spacing=3)}
       {line(800,671,'Free Recruiters',50,NAVY,family='Georgia,serif',anchor='middle')}
       <path d="M583 721H1017" stroke="#BCA77B" stroke-width="2"/>
-      {icon(774, 729, 49)}
+      {icon(774, 729, 49, 10)}
       {line(800,796,'DESIGN STUDY  •  2026',17,'#8A7960',weight=700,anchor='middle',spacing=3)}
     '''
     return wrap(body, 10, "Certificate", "#FAF7F0")
@@ -265,6 +313,32 @@ def main() -> None:
         sheet.paste(thumb, (x, y))
         draw.text((x + 8, y + 446), stem.replace("-", " ").upper(), fill=NAVY)
     sheet.save(ROOT / "japan-10-variants.jpg", quality=92)
+
+    icon_sheet = Image.new("RGB", (1600, 680), "#EEF1F1")
+    icon_draw = ImageDraw.Draw(icon_sheet)
+    backgrounds = ["#FFFEFA", "#0B2230", "#FAFAF7", "#FDFDFB", "#F6E9D8",
+                   "#0A3347", "#EAF2F2", "#F8F6F1", "#FFFFFF", "#FAF7F0"]
+    try:
+        title_font = ImageFont.truetype("arialbd.ttf", 25)
+        number_font = ImageFont.truetype("arial.ttf", 18)
+    except OSError:
+        title_font = number_font = ImageFont.load_default()
+    for i, name in enumerate(ICON_NAMES):
+        x, y = 16 + (i % 5) * 318, 16 + (i // 5) * 332
+        icon_draw.rounded_rectangle((x, y, x + 302, y + 314), radius=18,
+                                    fill=backgrounds[i], outline="#D4DEDE", width=2)
+        svg = (f'<svg xmlns="http://www.w3.org/2000/svg" width="216" height="216" '
+               f'viewBox="0 0 216 216">{icon(0, 0, 216, i + 1)}</svg>')
+        png = cairosvg.svg2png(bytestring=svg.encode("utf-8"))
+        with Image.open(BytesIO(png)) as rendered:
+            icon_sheet.paste(rendered, (x + 43, y + 21), rendered)
+        title_color = "#FFFFFF" if i in (1, 5) else "#123E4A"
+        caption_color = "#B9D2D0" if i in (1, 5) else "#617478"
+        icon_draw.text((x + 22, y + 251), f"{i + 1:02d}  {name}",
+                       font=title_font, fill=title_color)
+        icon_draw.text((x + 22, y + 284), CONCEPTS[i][0].split("-", 1)[1].upper(),
+                       font=number_font, fill=caption_color)
+    icon_sheet.save(ROOT / "japan-10-icons.jpg", quality=94)
 
     with ZipFile(ROOT / "japan-10-variants.zip", "w", ZIP_DEFLATED) as archive:
         for path in sorted(DEST.rglob("*")):
