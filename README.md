@@ -6,6 +6,18 @@ An **independent portfolio concept** for an international recruiting brand. It c
 
 [View the overview of all 48 cards](contact-sheet.jpg) · [Download the complete SVG and PNG series](free-recruiters-design-concept.zip)
 
+## Ten directions for Japan
+
+The [comparison sheet](japan-10-variants.jpg) shows ten genuinely different layouts. Each uses the same original brand mark and an accurately proportioned Japanese flag. [Download all ten as SVG and PNG](japan-10-variants.zip).
+
+|  |  |  |  |
+|---|---|---|---|
+| [01 Editorial](japan-01-editorial.png) | [02 Midnight](japan-02-midnight.png) | [03 Split](japan-03-split.png) | [04 Museum](japan-04-museum.png) |
+| [05 Travel poster](japan-05-travel-poster.png) | [06 Diagonal](japan-06-diagonal.png) | [07 Airy glass](japan-07-airy-glass.png) | [08 Ribbon](japan-08-ribbon.png) |
+| [09 Swiss grid](japan-09-swiss-grid.png) | [10 Certificate](japan-10-certificate.png) | | |
+
+Run `python japan_variants.py` to regenerate this set after installing the dependencies below.
+
 ## Deliverables
 
 - `output/free-recruiters-logo.svg` and `.png` — original brand concept
