@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "description": "Reproducible local build of the Free Recruiters design concept",
+  "dependencies": {
+    "flag-icons": "7.6.0"
+  }
+}
